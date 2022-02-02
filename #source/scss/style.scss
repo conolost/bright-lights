@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "nullstyle.scss";
+
+$light-indigo: #7a66cc;
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: url("../img/first page/Rectangle 6.jpg") 50% 0% no-repeat, #1c1b21;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template:
+    [start] "header" minmax(60px, auto) [row2]
+    [row2] "main" 1fr [row3]
+    [row3] "footer" minmax(414px, auto) [row-end] / 1fr;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  margin-top: 30px;
+  grid-area: header;
+  display: grid;
+  grid-template: 1fr / 1fr minmax(auto, 223px) minmax(auto, 632px) 1fr;
+  column-gap: 65px;
+  align-items: center;
+
+  &__logo {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &__picture {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  &__name {
+    margin: 12px 0 0 0;
+    width: 143px;
+    height: 42px;
+    position: relative;
+    overflow: hidden;
+  }
+  &__menu {
+    grid-column: 3 / 4;
+  }
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+  &__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #fff;
+    margin-right: 15px;
+  }
+  &__list li:last-child &__link {
+    margin-right: 0px;
+  }
+}
